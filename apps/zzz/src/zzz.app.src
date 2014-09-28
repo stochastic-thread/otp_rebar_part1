@@ -1,0 +1,12 @@
+{application, zzz,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { zzz_app, []}},
+  {env, []}
+ ]}.
