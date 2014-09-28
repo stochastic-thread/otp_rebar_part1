@@ -33,9 +33,15 @@ init(Args) ->
 say_hello() -> 
   gen_server:call(?MODULE, hello).
 
-handle_call(_Request, _From, State) ->
-  io:format("Hello from zzz_srv!~n", []),
-  {reply, ok, State}. %;
+handle_call(hello, _From, State) ->
+  hello:hello(),
+  io:format("Hello from zzz_srv!~n",[]),
+  {reply, ok, State}.
+
+% ------------------------------------------
+% handle_call(_Request, _From, State) ->
+%   io:format("Hello from zzz_srv!~n", []),
+%   {reply, ok, State}. %;
 
 % handle_call(_Request, _From, State) ->
 %  Reply = ok,
